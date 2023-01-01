@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>List Traders</title>
+    </head>
+
+    <body>
+        <div>
+            <h2>List Traders</h2>
+            <hr/>
+
+            <table>
+
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="trader:${traders}" >
+                        <td th:text="${trader.name}"></td>
+                        <td th:text="${trader.surname}"></td>
+                        <td th:text="${trader.email}"></td>
+                        <td th:number="${trader.accountBalance}"></td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </body>
+
+
+
+
+</html>
