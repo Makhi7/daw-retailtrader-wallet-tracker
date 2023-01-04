@@ -23,5 +23,8 @@ public class TraderController {
         return mav;
     }
 
-
+//    public String ("/saveTrader")
+    // TODO:
+    // Create a Post req
+    // Afterwards refactor my models and their services ideation
 }

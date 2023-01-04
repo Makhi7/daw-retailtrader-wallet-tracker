@@ -1,10 +1,13 @@
 package com.devatwork.traderwallettracker.trader;
 
 
+import com.devatwork.traderwallettracker.portfolio.Portfolio;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
@@ -36,6 +39,11 @@ public class Trader {
     )
     private Long id;
 
+    @Column (
+            name = "username",
+            unique = true
+    )
+    private String username;
 
     @Column(
             name = "name",
@@ -43,32 +51,33 @@ public class Trader {
             columnDefinition = "TEXT"
     )
     private String name;
+
     @Column(
             name = "surname",
             nullable = false,
             columnDefinition = "TEXT"
     )
     private String surname;
+
     @Column(
             name = "email",
             nullable = false,
             columnDefinition = "TEXT"
     )
     private String email;
-    @Column(
-            name = "accountBalance",
-            nullable = false
-    )
-    private Long accountBalance;
+
+    @OneToMany(mappedBy = "trader",cascade = CascadeType.ALL)
+    private List<Portfolio> portfolioList;
+
 
     public Trader(String name,
                   String surname,
-                  String email,
-                  Long accountBalance)
+                  String email, List<Portfolio> portfolioList)
     {
         this.name = name;
         this.surname = surname;
         this.email = email;
-        this.accountBalance = accountBalance;
+        this.portfolioList = portfolioList;
+
     }
 }
