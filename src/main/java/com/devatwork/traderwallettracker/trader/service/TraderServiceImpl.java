@@ -18,6 +18,8 @@ public class TraderServiceImpl implements TraderService{
 
     @Override
     public Trader findByUsername(String username) {
+        // TODO:
+        // find out why I can't access the method when I call
         return null;
     }
 

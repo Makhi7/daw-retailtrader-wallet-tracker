@@ -12,7 +12,7 @@ public interface PortfolioService {
     Portfolio update(Portfolio portfolio);
     void delete(Long id);
     Portfolio addInvestment(Long portfolioId,
-                            Long investmentId);
+                            Investment investment);
     Portfolio removeInvestment(Long portfolioId,
-                               Investment investment);
+                               Long investmentId);
 }
