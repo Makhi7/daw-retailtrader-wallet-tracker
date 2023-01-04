@@ -1,6 +1,7 @@
-package com.devatwork.traderwallettracker.portfolio;
+package com.devatwork.traderwallettracker.portfolio.service;
 
 import com.devatwork.traderwallettracker.investment.Investment;
+import com.devatwork.traderwallettracker.portfolio.Portfolio;
 
 import java.util.List;
 

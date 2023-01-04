@@ -26,11 +26,11 @@ public class Portfolio {
     private Date createdAt;
     private Date updatedAt;
 
-    @OneToMany(
-            mappedBy = "portfolio", cascade = CascadeType.ALL
-    )
+    @ManyToOne
+    @JoinColumn(name = "trader_id")
     private Trader trader;
 
+    @OneToMany(mappedBy = "portfolio", cascade = CascadeType.ALL)
     private List<Investment> investmentList;
 
     public Portfolio(String name, String description, Date createdAt, Date updatedAt, Trader trader, List<Investment> investmentList) {
